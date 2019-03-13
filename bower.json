@@ -1,0 +1,22 @@
+{
+  "name": "UYT",
+  "description": "UYT",
+  "main": "index.js",
+  "authors": [
+    "Milokhin Semen"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jquery-validation": "^1.19.0",
+    "slick-carousel": "slick.js#^1.8.1"
+  }
+}

@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url("../fonts/Fontfabric-MullerBold.eot");
+  src: url("../fonts/Fontfabric-MullerBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Fontfabric-MullerBold.woff2") format("woff2"), url("../fonts/Fontfabric-MullerBold.woff") format("woff"), url("../fonts/Fontfabric-MullerBold.ttf") format("truetype"), url("../fonts/Fontfabric-MullerBold.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 800;
+  font-display: auto;
+  src: url("../fonts/Fontfabric-MullerExtraBold.eot");
+  src: url("../fonts/Fontfabric-MullerExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Fontfabric-MullerExtraBold.woff2") format("woff2"), url("../fonts/Fontfabric-MullerExtraBold.woff") format("woff"), url("../fonts/Fontfabric-MullerExtraBold.ttf") format("truetype"), url("../fonts/Fontfabric-MullerExtraBold.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url("../fonts/Fontfabric-MullerLight.eot");
+  src: url("../fonts/Fontfabric-MullerLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Fontfabric-MullerLight.woff2") format("woff2"), url("../fonts/Fontfabric-MullerLight.woff") format("woff"), url("../fonts/Fontfabric-MullerLight.ttf") format("truetype"), url("../fonts/Fontfabric-MullerLight.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 500;
+  font-display: auto;
+  src: url("../fonts/Fontfabric-MullerMedium.eot");
+  src: url("../fonts/Fontfabric-MullerMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/Fontfabric-MullerMedium.woff2") format("woff2"), url("../fonts/Fontfabric-MullerMedium.woff") format("woff"), url("../fonts/Fontfabric-MullerMedium.ttf") format("truetype"), url("../fonts/Fontfabric-MullerMedium.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../fonts/Fontfabric-MullerRegular.eot");
+  src: url("../fonts/Fontfabric-MullerRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/Fontfabric-MullerRegular.woff2") format("woff2"), url("../fonts/Fontfabric-MullerRegular.woff") format("woff"), url("../fonts/Fontfabric-MullerRegular.ttf") format("truetype"), url("../fonts/Fontfabric-MullerRegular.svg") format("svg");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f5f8;
+  margin: 0;
+  font-family: 'Muller',sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #262b30;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.main-header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo-wrapper {
+  font-size: 0;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 270px;
+}
+
+.vertical-line {
+  display: block;
+  width: 2px;
+  height: 50px;
+  background-color: rgba(161, 176, 193, 0.15);
+}
+
+.logo-svg-path {
+  fill: #ffc80a;
+}
+
+.logo-text-part {
+  display: block;
+  font-size: 13px;
+  line-height: 15px;
+  color: #a1b0c1;
+}
+
+.header-contacts {
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.phone, .email {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 25px;
+  font-size: 0;
+  text-decoration: none;
+}
+
+.phone-svg, .email-svg {
+  position: absolute;
+  left: 0;
+}
+
+.phone-svg-path, .email-svg-path {
+  fill: #ffc80a;
+}
+
+.phone-text-part, .email-text-part {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+  color: #a1b0c1;
+}
+
+.phone-part {
+  color: #fff;
+  font-size: 18px;
+}
+
+.email {
+  margin-left: 25px;
+}
+
+.header-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-btns .header-btn:nth-of-type(n+2) {
+  margin-left: 20px;
+}
+
+.header-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 2px solid rgba(161, 176, 193, 0.15);
+  border-radius: 10px;
+  height: 50px;
+  padding: 0 30px;
+  font: 500 14px/16px 'Muller',sans-serif;
+  color: #fff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.header-btn__svg {
+  margin-right: 10px;
+}
+
+.header-btn__svg-path {
+  fill: #ffc80a;
+}
+
+.header-btn:hover {
+  background-color: #ffc80a;
+  border-color: transparent;
+  color: #262b30;
+}
+
+.header-btn:hover .header-btn__svg-path {
+  fill: #262b30;
+}
+
+.basket {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.basket__svg {
+  -webkit-transform: translate(-13px, 0);
+  transform: translate(-13px, 0);
+}
+
+.basket__svg-path {
+  fill: #fff;
+}
+
+.basket::after {
+  content: attr(data-count);
+  position: absolute;
+  right: 0;
+  font: 700 14px/16px 'Muller',sans-serif;
+  color: #262b30;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: #ffc80a;
+  border-radius: 50%;
+}
+
+.bottom-header {
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.bottom-header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navigation {
+  font-size: 0;
+}
+
+.navigation__drop-down {
+  margin-right: 60px;
+  display: inline-block;
+  position: relative;
+}
+
+.navigation__drop-down-btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 20px 0 0;
+  font: 500 16px/18px 'Muller',sans-serif;
+  color: #566886;
+}
+
+.navigation__drop-down-btn::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #566886;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.navigation__drop-down-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.navigation__drop-down-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.navigation__link {
+  margin-right: 60px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #566886;
+  text-decoration: none;
+}
+
+.search-form {
+  width: 260px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.search-form__btn {
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.search-form__btn-svg-path {
+  fill: #ccc;
+}
+
+.search-form__input {
+  font: 500 14px/20px 'Muller',sans-serif;
+  color: #272f40;
+  border: none;
+  outline: none;
+  margin: 0 9px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.search-form__input::-webkit-input-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #a1b0c1;
+}
+
+.search-form__input:-moz-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #a1b0c1;
+}
+
+.search-form__input::-moz-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #a1b0c1;
+}
+
+.search-form__input:-ms-input-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #a1b0c1;
+}

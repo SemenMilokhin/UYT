@@ -1,0 +1,293 @@
+//______________________________________________________________________________
+//
+//                                Переменные
+//______________________________________________________________________________
+$primary-color: #262b30;
+$secondary-color: #a1b0c1;
+$ternary-color: #566886;
+$quantenary-color: #272f40;
+$light-color: #fff;
+$contrast-color: #ffc80a;
+//______________________________________________________________________________
+//
+//                                 Миксины
+//______________________________________________________________________________
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder           { @content; }
+	&::-moz-placeholder          { @content; }
+	&:-ms-input-placeholder      { @content; }  
+}
+//______________________________________________________________________________
+//
+//                                  Шрифты
+//______________________________________________________________________________
+@import 'fonts';
+//______________________________________________________________________________
+//
+//                               Спецификация
+//______________________________________________________________________________
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #f4f5f8;
+	margin: 0;
+	font-family: 'Muller',sans-serif;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.container {
+	width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+//______________________________________________________________________________
+//
+//                                 Header
+//______________________________________________________________________________
+.main-header {
+	background-color: $primary-color;
+	height: 90px;
+	display: flex;
+	align-items: center;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.logo-wrapper {
+	font-size: 0;
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 270px;
+}
+.vertical-line {
+	display: block;
+	width: 2px;
+	height: 50px;
+	background-color: transparentize($secondary-color, 0.85);
+}
+.logo-svg-path {
+	fill: $contrast-color;
+}
+.logo-text-part {
+	display: block;
+	font-size: 13px; 
+	line-height: 15px;
+	color: $secondary-color;
+}
+.header-contacts {
+	height: 32px;
+	display: flex;
+}
+.phone, .email {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: 25px;
+	font-size: 0;
+	text-decoration: none;
+}
+.phone-svg, .email-svg {
+	position: absolute;
+	left: 0;
+}
+.phone-svg-path, .email-svg-path {
+	fill: $contrast-color;
+}
+.phone-text-part, .email-text-part {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 500;
+	color: $secondary-color;
+}
+.phone-part {
+	color: $light-color;
+	font-size: 18px;
+}
+.email {
+	margin-left: 25px;
+}
+.header-btns {
+	display: flex;
+	.header-btn:nth-of-type(n+2) {
+		margin-left: 20px;
+	}
+} 
+.header-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	outline: none;
+	background: none; 
+	border: 2px solid transparentize($secondary-color, 0.85);
+	border-radius: 10px;
+	height: 50px;
+	padding: 0 30px;
+	font: 500 14px/16px 'Muller',sans-serif;
+	color: $light-color;
+	transition: background-color 0.2s;
+	&__svg {
+		margin-right: 10px;
+	}
+	&__svg-path {
+		fill: $contrast-color;
+	}
+	&:hover {
+		background-color: $contrast-color;
+		border-color: transparent;
+		color: $primary-color;
+		.header-btn__svg-path {
+			fill: $primary-color;
+		}
+	}
+}
+.basket {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	&__svg {
+		transform: translate(-13px,0);
+	}
+	&__svg-path {
+		fill: $light-color;
+	}
+	&::after {
+		content: attr(data-count);
+		position: absolute;
+		right: 0;
+		font: 700 14px/16px 'Muller',sans-serif;
+		color: $primary-color;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 22px;
+		height: 22px;
+		background-color: $contrast-color;
+		border-radius: 50%;
+	}
+}
+.bottom-header {
+	height: 55px;
+	display: flex;
+	align-items: center;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.navigation {
+	font-size: 0;
+	&__drop-down {
+		margin-right: 60px;
+		display: inline-block;
+		position: relative;
+	}
+	&__drop-down-btn {
+		position: relative;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		background: none;
+		padding: 0 20px 0 0;
+		font: 500 16px/18px 'Muller',sans-serif;
+		color: $ternary-color;
+		&::after {
+			content: '';
+			position: absolute;
+			right: 2px;
+			top: 3px;
+			width: 7px;
+			height: 7px;
+			border: 1px solid $ternary-color;
+			border-top: none;
+			border-right: none;
+			transform: rotate(-45deg);
+		}
+	}
+	&__drop-down-list {
+		display: none;
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+	}
+	&__drop-down-list-item {
+
+	}
+	&__drop-down-link {
+		font-size: 14px;
+		text-decoration: none;
+	}
+	&__link {
+		margin-right: 60px;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 500;
+		color: $ternary-color;
+		text-decoration: none;
+	}
+}
+.search-form {
+	width: 260px;
+	height: 35px;
+	background-color: $light-color;
+	border-radius: 5px;
+	padding: 7px;
+	display: flex;
+	justify-content: space-between;
+	&__btn {
+		width: 20px;
+		height: 20px;
+		display: block;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		background: none;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&_search {
+
+		}
+		&_reset {
+
+		}
+	}
+	&__btn-svg {
+		
+	}
+	&__btn-svg-path {
+		fill: #ccc;
+	}
+	&__input {
+		font: 500 14px/20px 'Muller',sans-serif;
+		color: $quantenary-color;
+		border: none;
+		outline: none;
+		margin: 0 9px;
+		flex-grow: 1;
+		@include placeholder {
+			font-family: 'Muller',sans-serif;
+			color: $secondary-color;
+		}
+	}
+}
