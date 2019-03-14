@@ -7,7 +7,11 @@ $secondary-color: #a1b0c1;
 $ternary-color: #566886;
 $quantenary-color: #272f40;
 $light-color: #fff;
+$light-color-2: #f4f5f8;
+$light-color-3: #e3e8ee;
 $contrast-color: #ffc80a;
+
+$card-shadow: 0px 0px 60px transparentize($quantenary-color,0.93);
 //______________________________________________________________________________
 //
 //                                 Миксины
@@ -31,7 +35,6 @@ $contrast-color: #ffc80a;
 	box-sizing: border-box;
 }
 body {
-	background-color: #f4f5f8;
 	margin: 0;
 	font-family: 'Muller',sans-serif;
 	min-height: 100vh;
@@ -43,6 +46,37 @@ body {
 	width: 1170px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+.section-title {
+	font-size: 36px;
+	line-height: 38px;
+	font-weight: 700;
+	color: $primary-color;
+	margin: 0 0 45px;
+}
+.title-contrast {
+	color: $contrast-color;
+}
+.section-alt-title {
+	font-size: 36px;
+	line-height: 48px;
+	font-weight: 700;
+	color: $primary-color;
+	margin: 0 0 45px;
+}
+.section-alt-subtitle {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 700;
+	color: $primary-color;
+	margin: 0 0 5px;
+}
+.section-text {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: $ternary-color;
+	margin: 0 0 20px;
 }
 //______________________________________________________________________________
 //
@@ -183,6 +217,7 @@ body {
 	}
 }
 .bottom-header {
+	background-color: $light-color-2;
 	height: 55px;
 	display: flex;
 	align-items: center;
@@ -219,15 +254,21 @@ body {
 			border-top: none;
 			border-right: none;
 			transform: rotate(-45deg);
+			transition: 0.2s;
+		}
+		&.opened {
+			&::after {
+				transform: rotate(45deg) rotateX(180deg) translate(3px, -3px);
+			}
 		}
 	}
 	&__drop-down-list {
-		display: none;
-
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		position: absolute;
+		clip: rect(0, 9999px, 0, 0);
+		transition: clip 0.5s;
 	}
 	&__drop-down-list-item {
 
@@ -265,15 +306,15 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		&_search {
-
-		}
+		transition: opacity 0.2s;
 		&_reset {
-
+			visibility:hidden;
+			opacity: 0;
 		}
-	}
-	&__btn-svg {
-		
+		&.show {
+			visibility:visible;
+			opacity: 1;
+		}
 	}
 	&__btn-svg-path {
 		fill: #ccc;
@@ -289,5 +330,319 @@ body {
 			font-family: 'Muller',sans-serif;
 			color: $secondary-color;
 		}
+	}
+}
+//______________________________________________________________________________
+//
+//                               Section Doors
+//______________________________________________________________________________
+.section-doors {
+	background-color: $light-color-2;
+	.container {
+		padding: 50px 15px 90px;
+	}
+}
+.cards {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.cards__item:nth-last-of-type(-n+3) {
+		margin: 0;
+	}
+	&__item {
+		width: 555px;
+		height: 270px;
+		overflow: hidden;
+		border-radius: 10px;
+		background-color: $light-color;
+		box-shadow: $card-shadow;
+		margin-bottom: 30px;
+		&_alt {
+			width: 360px;
+		}
+	}
+	&__link {
+		text-decoration: none;
+		font-size: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__image {
+		height: 220px;
+		max-width: 100%;
+	}
+	&__text-wrapper {
+		height: 50px;
+		width: 100%;
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 700;
+		color: $ternary-color;
+		margin: 0;
+	}
+	&__count {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: $ternary-color;
+	}
+}
+//______________________________________________________________________________
+//
+//                               Section Floor
+//______________________________________________________________________________
+.section-floor {
+	background-color: $light-color;
+	.container {
+		padding: 50px 15px 90px;
+	}
+}
+//______________________________________________________________________________
+//
+//                            Section Information
+//______________________________________________________________________________
+.section-information {
+	position: relative;
+	background-color: $light-color-2;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.side-slider {
+	position: relative;
+	left: 0;
+	top: 0;
+	margin-right: 30px;
+	&__slides {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		width: 555px;
+	}
+	&__slide {
+
+	}
+	&__image {
+		width: 100%;
+		height: 890px;
+	}
+	&__controls {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		bottom: 20px;
+		right: 20px;
+		width: 140px;
+		height: 55px;
+		background-color: $light-color;
+		border-radius: 10px;
+		overflow: hidden;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 69px;
+			top: 10px;
+			width: 2px;
+			height: 35px;
+			background-color: $light-color-3;
+		}
+	}
+	&__arrow {
+		position: relative;
+		width: 69px;
+		height: 55px;
+		border: none;
+		outline: none;
+		background: none;
+		cursor: pointer;
+		padding: 0;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 20px;
+			width: 10px;
+			height: 10px;
+			border: 2px solid $secondary-color;
+			border-top: none;
+			border-right: none;
+			transition: 0.2s;
+		}
+		&_left {
+			&::after {
+				transform: rotate(45deg);
+				left: 30px;
+			}
+		}
+		&_right {
+			&::after {
+				transform: rotate(-135deg);
+				right: 30px;
+			}
+		}
+		&:hover {
+			&::after {
+				border-color: $primary-color;
+			}
+		}
+	}
+}
+.section-wrapper {
+	padding: 80px 0 60px;
+}
+.scroll-wrapper {
+	overflow-y: scroll;
+	max-height: 750px;
+}
+//______________________________________________________________________________
+//
+//                                 Footer
+//______________________________________________________________________________
+.footer {
+	background-color: $primary-color;
+	.container {
+		padding: 70px 15px 80px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+}
+.footer-logo-svg-wrapper {
+	background-color: $contrast-color;
+	width: 135px;
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-logo-svg-path {
+	fill: $primary-color;
+}
+.footer-logo-text-part {
+	display: block;
+	font-size: 13px; 
+	line-height: 15px;
+	color: $light-color;
+}
+.footer-navigation {
+	width: 440px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	&__column {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	&__column-title {
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 700;
+		color: $light-color;
+		margin: 0 0 15px;
+	}
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		.footer-navigation__list-item:last-of-type {
+			margin: 0;
+		}
+	}
+	&__list-item {
+		margin: 0 0 15px;
+	}
+	&__list-link {
+		position: relative;
+		font-size: 14px;
+		line-height: 18px;
+		color: $secondary-color;
+		text-decoration: none;
+		&::after {
+			content: '';
+			width: 0%;
+			height: 1px;
+			background-color: $secondary-color;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			transition: 0.3s;
+		}
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+	&__link {
+		position: relative;
+		display: inline-block;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 700;
+		color: $light-color;
+		margin: 0 0 15px;
+		text-decoration: none;
+		&::after {
+			content: '';
+			width: 0%;
+			height: 1px;
+			background-color: $light-color;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			transition: 0.3s;
+		}
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}
+.footer-contacts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 260px;
+	&__item {
+		display: flex;
+		align-items: center;
+		height: 25px;
+		margin-bottom: 7px;
+	}
+	&__link {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+	&__svg {
+		margin-right: 10px;
+	}
+	&__svg-path {
+		fill: $contrast-color;
+	}
+	&__text {
+		font-size: 12px;
+		line-height: 20px;
+		font-weight: 500;
+		color: $secondary-color;
+	}
+	&__contrast {
+		color: $light-color;
+		font-size: 18px;
 	}
 }
