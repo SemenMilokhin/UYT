@@ -9,6 +9,7 @@ $quantenary-color: #272f40;
 $light-color: #fff;
 $light-color-2: #f4f5f8;
 $light-color-3: #e3e8ee;
+$light-color-4: #c9d5de;
 $contrast-color: #ffc80a;
 
 $card-shadow: 0px 0px 60px transparentize($quantenary-color,0.93);
@@ -58,11 +59,11 @@ body {
 	color: $contrast-color;
 }
 .section-alt-title {
-	font-size: 36px;
-	line-height: 48px;
+	font-size: 32px;
+	line-height: 40px;
 	font-weight: 700;
 	color: $primary-color;
-	margin: 0 0 45px;
+	margin: 0 0 30px;
 }
 .section-alt-subtitle {
 	font-size: 24px;
@@ -77,6 +78,27 @@ body {
 	font-weight: 400;
 	color: $ternary-color;
 	margin: 0 0 20px;
+}
+.section-btns {
+	text-align: center;
+}
+.section-btn {
+	display: inline-block;
+	border: 2px solid $light-color-3;
+	border-radius: 10px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 700;
+	color: $quantenary-color;
+	text-decoration: none;
+	padding: 17px 38px;
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+	&:hover {
+		background-color: $quantenary-color;
+		color: $light-color;
+		border-color: transparent;
+		transition: background-color 0.2s, color 0.2s, border-color 0s;
+	}
 }
 //______________________________________________________________________________
 //
@@ -233,6 +255,7 @@ body {
 		margin-right: 60px;
 		display: inline-block;
 		position: relative;
+		z-index: 5;
 	}
 	&__drop-down-btn {
 		position: relative;
@@ -334,6 +357,122 @@ body {
 }
 //______________________________________________________________________________
 //
+//                           Section Main Slider
+//______________________________________________________________________________
+.section-main-slider {
+	background-color: $light-color;
+}
+.main-slider {
+	position: relative;
+	&__slides {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&__slide {
+		width: 100vw;
+		height: 37.9vw;
+		position: relative;
+		.container {
+			position: relative;
+			z-index: 1;
+			height: 100%;
+			padding: 0 115px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+	}
+	&__bg-img {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	&__title {
+		font-size: 54px;
+		line-height: 56px;
+		font-weight: 800;
+		color: $light-color;
+		margin: 0 0 12px;
+	}
+	&__subtitle {
+		font-size: 24px;
+		line-height: 26px;
+		font-weight: 300;
+		color: $light-color;
+		margin: 0 0 23px;
+	}
+	&__link {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 700;
+		color: $primary-color;
+		text-decoration: none;
+		padding: 21px 40px;
+		background-color: $contrast-color;
+		border-radius: 10px;
+	}
+	&__controls {
+		width: 1170px;
+		height: 0;
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	&__arrow {
+		padding: 0;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		position: absolute;
+		top: -25px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: transparentize($light-color,0.9);
+		transition: 0.2s;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 18px;
+			width: 11px;
+			height: 11px;
+			border: 2px solid transparentize($light-color,0.6);
+			border-top: none;
+			border-right: none;
+			transition: 0.2s;
+		}
+		&_left {
+			left: 15px;
+			&::after {
+				transform: rotate(45deg);
+				left: 21px;
+			}
+		}
+		&_right {
+			right: 15px;
+			&::after {
+				transform: rotate(-135deg);
+				right: 21px;
+			}
+		}
+		&:hover {
+			background-color: $primary-color;
+			&::after {
+				border-color: $contrast-color;
+			}
+		}
+	}
+}
+//______________________________________________________________________________
+//
 //                               Section Doors
 //______________________________________________________________________________
 .section-doors {
@@ -424,16 +563,12 @@ body {
 	position: relative;
 	left: 0;
 	top: 0;
-	margin-right: 30px;
 	&__slides {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		font-size: 0;
 		width: 555px;
-	}
-	&__slide {
-
 	}
 	&__image {
 		width: 100%;
@@ -458,6 +593,9 @@ body {
 			width: 2px;
 			height: 35px;
 			background-color: $light-color-3;
+		}
+		&.left-side {
+			left: 20px;
 		}
 	}
 	&__arrow {
@@ -501,10 +639,287 @@ body {
 }
 .section-wrapper {
 	padding: 80px 0 60px;
+	width: 555px;
 }
 .scroll-wrapper {
 	overflow-y: scroll;
 	max-height: 750px;
+}
+//______________________________________________________________________________
+//
+//                         Section Special Offers
+//______________________________________________________________________________
+.section-special-offers {
+	position: relative;
+	background-color: $light-color;
+	.container {
+		padding: 50px 15px 90px;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $light-color-3;
+	}
+}
+.special-offers {
+	list-style: none;
+	margin: 0 0 50px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.special-offers__item:nth-last-of-type(n+5) {
+		margin-bottom: 28px;
+	}
+	&__item {
+		position: relative;
+		width: 264px;
+		height: 460px;
+		border-radius: 10px; overflow: hidden;
+		box-shadow: $card-shadow;
+		font-size: 0;
+		&.in-basket {
+			.special-offers__hidden-svg-wrapper {
+				transform: scale(1);
+			}
+		}
+	}
+	&__link {
+		display: block;
+		height: 100%;
+		position: relative;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: $light-color;
+		transition: 0.2s;
+		&:hover {
+			background-color: $light-color-2;
+		}
+	}
+	&__image {
+		width: 100%;
+		height: 350px;
+	}
+	&__text-wrapper {
+		flex-grow: 1;
+		padding: 15px 20px;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 700;
+		color: $ternary-color;
+		margin: 0 0 12px;
+	}
+	&__last-price {
+		display: block;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: $secondary-color;
+		text-decoration: line-through;
+		margin: 0 0 2px;
+	}
+	&__price {
+		font-size: 24px;
+		line-height: 26px;
+		font-weight: 700;
+		color: $primary-color;
+		margin: 0;
+	}
+	&__in-basket-btn {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		z-index: 1;
+		border: none;
+		outline: none;
+		background: none;
+		cursor: pointer;
+		transition: 0.2s;
+		&:hover {
+			background-color: $light-color-2;
+		}
+	}
+	&__svg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+	&__svg-path {
+		fill: $secondary-color;
+	}
+	&__hidden-svg-wrapper {
+		transform: scale(0);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: $contrast-color;
+		transition: 0.15s;
+	}
+	&__hidden-svg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+	&__hidden-svg-path {
+		fill: $primary-color;
+	}
+}
+//______________________________________________________________________________
+//
+//                             Section Articles
+//______________________________________________________________________________
+.section-articles {
+	background-color: $light-color;
+	.container {
+		padding: 50px 15px 90px;
+	}
+}
+.articles {
+	list-style: none;
+	margin: 0 0 50px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.articles__item:nth-last-of-type(n+5) {
+		margin-bottom: 28px;
+	}
+	&__item {
+		width: 264px;
+		height: 264px;
+		box-shadow: $card-shadow;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	&__image {
+		width: 100%;
+		height: 165px;
+	}
+	&__text-wrapper {
+		padding: 15px 20px;
+		height: 99px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 700;
+		color: $ternary-color;
+		margin: 0;
+	}
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__post-date {
+		font-size: 12px;
+		line-height: 14px;
+		color: $light-color-4;
+	}
+	&__read-more-btn {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: $secondary-color;
+		text-decoration: none;
+		transition: 0.2s;
+		&:hover {
+			color: $ternary-color;
+		}
+	}
+}
+//______________________________________________________________________________
+//
+//                              Section Advantages
+//______________________________________________________________________________
+.section-advantages {
+	background-color: $light-color;
+	.container {
+		padding: 70px 15px;
+	}
+}
+.advantages {
+	position: relative;
+	z-index: 1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&::before {
+		content: '';
+		width: 100vw;
+		height: 2px;
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		top: 113px;
+		background-color: $light-color-3;
+	}
+	&__item {
+		padding: 25px 20px;
+		position: relative;
+		width: 204px;
+		height: 227px;
+		border-radius: 10px;
+		overflow: hidden;
+		background-color: $light-color;
+		box-shadow: $card-shadow;
+		transition: background-color 0.2s;
+		&:hover {
+			background-color: $primary-color;
+			.advantages__title,.advantages__information {
+				color: $light-color;
+			}
+			color: $light-color;
+			.advantages__svg-path {
+				fill: $contrast-color;
+			}
+		}
+	}
+	&__svg {
+		margin: 5px 0 23px;
+	}
+	&__svg-path {
+		fill: $secondary-color;
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 700;
+		color: $primary-color;
+		margin: 0 0 4px;
+	}
+	&__information {
+		font-size: 14px;
+		line-height: 22px;
+		color: $ternary-color;
+		margin: 0;
+	}
 }
 //______________________________________________________________________________
 //
