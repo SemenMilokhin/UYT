@@ -7,30 +7,48 @@ $(document).ready(function() {
 	initSpecialOffersMovements();
 
 	function initHeaderDD() {
-		var nav   = $('.navigation'),
-			navDD = nav.find('.navigation__drop-down');
+		var nav      = $('.navigation'),
+			navDD    = nav.find('.navigation__drop-down'),
+			closeAll = function(count) {
+				navDD.each(function(c,element) {
+					if(count!==c) {
+						console.log('клик по - '+count);
+						console.log('закрытие - '+c);
+						$(element).find('.navigation__drop-down-btn').removeClass('opened'),
+						$(element).find('.navigation__drop-down-list').css({
+							clip: 'rect(0, 9999px, 0, 0)'
+						});
+					}
+				});
+				console.log('closeAll');
+			};
 
 		navDD.each(function(i,el) {
 			var btn        = $(el).find('.navigation__drop-down-btn'),
 				list       = $(el).find('.navigation__drop-down-list'),
 				listHeight = list.outerHeight(),
-				listFlag   = true;
-
-			btn.on('click', function(evt) {
-				evt.preventDefault();
-				btn.toggleClass('opened');
-
-				if (listFlag) {
+				openDD     = function() {
+					btn.addClass('opened');
 					list.css({
 						clip: 'rect(0, 9999px, '+listHeight+'px, 0)'
 					});
-					listFlag = false;
-				} else {
-					console.log('close');
+				},
+				closeDD    = function() {
+					btn.removeClass('opened');
 					list.css({
 						clip: 'rect(0, 9999px, 0, 0)'
 					});
-					listFlag = true;
+				};
+
+			btn.on('click', function(evt) {
+				evt.preventDefault();
+				closeAll(i);
+				if (btn.hasClass('opened')) {
+					console.log('close');
+					closeDD();
+				} else {
+					console.log('open');
+					openDD();
 				}
 			});
 
@@ -113,15 +131,15 @@ $(document).ready(function() {
 			cursorfixedheight: 100,
 	  		cursorborder:"none",
 	  		cursorborderradius: '4px',
-	  		autohidemode: false
+	  		autohidemode: false	  		
 		});
 		$('.scroll-wrapper').each(function(i,el){
 			$(el).niceScroll({
 				cursorcolor: "#ffc80a",
 				cursorwidth:"8px",
 				cursorfixedheight: 100,
-				scrollspeed: 600,
-				mousescrollstep: 20,
+				scrollspeed: 100,
+				mousescrollstep: 10,
 		  		cursorborder:"none",
 		  		cursorborderradius: '4px',
 		  		autohidemode: false

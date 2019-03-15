@@ -403,16 +403,28 @@ body {
 .navigation__drop-down-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 16px 0 0;
   position: absolute;
+  top: 20px;
+  left: -10px;
   clip: rect(0, 9999px, 0, 0);
+  background-color: #f4f5f8;
   -webkit-transition: clip 0.5s;
   transition: clip 0.5s;
 }
 
 .navigation__drop-down-link {
-  font-size: 14px;
+  padding: 0 10px;
+  display: block;
+  white-space: nowrap;
   text-decoration: none;
+  color: #566886;
+  font: 500 14px/30px 'Muller',sans-serif;
+  height: 30px;
+}
+
+.navigation__drop-down-link:hover {
+  background-color: #e3e8ee;
 }
 
 .navigation__link {
@@ -855,13 +867,17 @@ body {
 }
 
 .section-wrapper {
-  padding: 80px 0 60px;
+  padding: 45px 0 45px;
   width: 555px;
 }
 
 .scroll-wrapper {
-  overflow-y: scroll;
-  max-height: 750px;
+  max-height: 800px;
+  padding: 0 10px 0 0;
+}
+
+.scroll-wrapper > :last-child {
+  margin-bottom: 0;
 }
 
 .section-special-offers {
