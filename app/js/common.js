@@ -86,16 +86,6 @@ $(document).ready(function() {
 				prevArrow: arrowLeft,
 				nextArrow: arrowRight
 			});
-			// 	parent = $(el).parent('section'),
-			// 	container = parent.find('.container'),
-			// 	sliderWidth = (container.outerWidth(true)+container.innerWidth())/2-container.width()-80;
-
-			// console.log(container.outerWidth(true));
-			// console.log(container.innerWidth());
-			// console.log(sliderWidth);
-			// console.log(parent);
-			// console.log(container);
-			// slides.width(sliderWidth);
 		});
 	}
 	function initMainSlider() {
