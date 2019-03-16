@@ -5,6 +5,7 @@ $(document).ready(function() {
 	initAsideSlider();
 	initMainSlider();
 	initSpecialOffersMovements();
+	initFiltersFunctional();
 
 	function initHeaderDD() {
 		var nav      = $('.navigation'),
@@ -12,15 +13,12 @@ $(document).ready(function() {
 			closeAll = function(count) {
 				navDD.each(function(c,element) {
 					if(count!==c) {
-						console.log('клик по - '+count);
-						console.log('закрытие - '+c);
-						$(element).find('.navigation__drop-down-btn').removeClass('opened'),
+						$(element).find('.navigation__drop-down-btn').removeClass('opened');
 						$(element).find('.navigation__drop-down-list').css({
 							clip: 'rect(0, 9999px, 0, 0)'
 						});
 					}
 				});
-				console.log('closeAll');
 			};
 
 		navDD.each(function(i,el) {
@@ -44,10 +42,8 @@ $(document).ready(function() {
 				evt.preventDefault();
 				closeAll(i);
 				if (btn.hasClass('opened')) {
-					console.log('close');
 					closeDD();
 				} else {
-					console.log('open');
 					openDD();
 				}
 			});
@@ -133,6 +129,60 @@ $(document).ready(function() {
 		  		cursorborder:"none",
 		  		cursorborderradius: '4px',
 		  		autohidemode: false
+			});
+		});
+	}
+	function initFiltersFunctional() {
+		var form        = $('.filters'),
+			selectsList = form.find('.filters__selects-list'),
+			selects     = selectsList.find('.filters__select'),
+			closeAll = function(count) {
+				selects.each(function(c,element) {
+					if(count!==c) {
+						$(element).find('.filters__select-btn').removeClass('opened');
+						$(element).find('.filters__option-list').css({
+							clip: 'rect(0, 9999px, 0, 0)'
+						});
+					}
+				});
+			};
+
+		selects.each(function(i,el){
+			var btn            = $(el).find('.filters__select-btn'),
+				list           = $(el).find('.filters__option-list'),
+				listHeight     = list.outerHeight(),
+				options        = list.find('.filters__option'),
+				input          = $(el).find('.filters__select-input'),
+				openSelectList = function() {
+					btn.addClass('opened');
+					list.css({
+						clip: 'rect(0, 9999px, '+listHeight+'px, 0)'
+					});
+				},
+				closeSelectList = function() {
+					btn.removeClass('opened');
+					list.css({
+						clip: 'rect(0, 9999px, 0, 0)'
+					});
+				};
+
+			btn.on('click', function(evt) {
+				evt.preventDefault();
+				closeAll(i);
+				if (btn.hasClass('opened')) {
+					closeSelectList();
+				} else {
+					openSelectList();
+				}
+			});
+
+			options.each(function(i,option){
+				$(option).on('click',function(evt){
+					evt.preventDefault();
+					input.val($(option).attr('data-value'));
+					btn.text($(option).text());
+					closeAll();
+				});
 			});
 		});
 	}
