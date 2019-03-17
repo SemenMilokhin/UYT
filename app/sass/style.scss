@@ -101,6 +101,11 @@ body {
 		transition: background-color 0.2s, color 0.2s, border-color 0s;
 	}
 }
+section.first {
+	.container {
+		padding-top: 15px;
+	}
+}
 //______________________________________________________________________________
 //
 //                                 Header
@@ -1812,6 +1817,53 @@ body {
 		border-radius: 10px;
 	}
 	
+}
+//______________________________________________________________________________
+//
+//                        Section Service Information
+//______________________________________________________________________________
+.section-service-information {
+	background-color: $light-color;
+	.container {
+		padding: 15px 15px 36px;
+	}
+}
+.service-information {
+	&__title {
+		font-size: 24px;
+		line-height: 26px;
+		font-weight: 700;
+		color: $primary-color;
+		margin: 0 0 25px;
+	}
+	&__subtitle {
+		font-size: 18px;
+		line-height: 24px;
+		margin: 0;
+	}
+	&__list {
+		list-style: none;
+		margin: 0 0 25px;
+		padding: 0;
+	}
+	&__list-item {
+		font-size: 16px;
+		line-height: 24px;
+		color: $ternary-color;
+		position: relative;
+		&::before {
+			content: '- ';
+		}
+	}
+	&__info {
+		font-size: 16px;
+		line-height: 24px;
+		color: $ternary-color;
+		margin: 0 0 24px;
+		~ .service-information__title {
+			margin: 48px 0 25px;
+		}
+	}
 }
 //______________________________________________________________________________
 //

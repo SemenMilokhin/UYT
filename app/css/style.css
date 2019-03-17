@@ -133,6 +133,10 @@ body {
   transition: background-color 0.2s, color 0.2s, border-color 0s;
 }
 
+section.first .container {
+  padding-top: 15px;
+}
+
 .main-header {
   background-color: #262b30;
   height: 90px;
@@ -2323,6 +2327,56 @@ body {
   height: 190px;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.section-service-information {
+  background-color: #fff;
+}
+
+.section-service-information .container {
+  padding: 15px 15px 36px;
+}
+
+.service-information__title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #262b30;
+  margin: 0 0 25px;
+}
+
+.service-information__subtitle {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.service-information__list {
+  list-style: none;
+  margin: 0 0 25px;
+  padding: 0;
+}
+
+.service-information__list-item {
+  font-size: 16px;
+  line-height: 24px;
+  color: #566886;
+  position: relative;
+}
+
+.service-information__list-item::before {
+  content: '- ';
+}
+
+.service-information__info {
+  font-size: 16px;
+  line-height: 24px;
+  color: #566886;
+  margin: 0 0 24px;
+}
+
+.service-information__info ~ .service-information__title {
+  margin: 48px 0 25px;
 }
 
 .footer {

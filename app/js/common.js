@@ -188,57 +188,93 @@ $(document).ready(function() {
 		});
 	}
 	function initSectionDoorTypeMovements() {
-	// 	var hold        = $('.door'),
-	// 		form        = hold.find('.door__calc'),
-	// 		selects     = form.find('.door__select'),
-	// 		closeAll = function(count) {
-	// 			selects.each(function(c,element) {
-	// 				if(count!==c) {
-	// 					$(element).find('.filters__select-btn').removeClass('opened');
-	// 					$(element).find('.filters__option-list').css({
-	// 						clip: 'rect(0, 9999px, 0, 0)'
-	// 					});
-	// 				}
-	// 			});
-	// 		};
+		var hold           = $('.door'),
+			form           = hold.find('.door__calc'),
+			selects        = form.find('.door__select'),
+			contentWrapper = hold.find('.door__content-wrapper'),
+			tabs           = contentWrapper.find('.door__tabs-list').find('.door__tab'),
+			children       = contentWrapper.find('.door__content').children(),
+			openChild      = function(count) {
+				children.each(function(i,el){
+					if (count == i) {
+						$(el).css({
+							display: 'block'
+						});
+					} else {
+						$(el).css({
+							display: 'none'
+						});
+					}
+				});
+			},
+			closeAllTabs   = function(count) {
+				tabs.each(function(c,element) {
+					if(count!==c) {
+						$(element).removeClass('door__tab_selected');
+					}
+				});
+			},
+			closeAll       = function(count) {
+				selects.each(function(c,element) {
+					if(count!==c) {
+						$(element).find('.door__select-btn').removeClass('opened');
+						$(element).find('.door__option-list').css({
+							clip: 'rect(0, 9999px, 0, 0)'
+						});
+					}
+				});
+			};
 
-	// 	selects.each(function(i,el){
-	// 		var btn            = $(el).find('.filters__select-btn'),
-	// 			list           = $(el).find('.filters__option-list'),
-	// 			listHeight     = list.outerHeight(),
-	// 			options        = list.find('.filters__option'),
-	// 			input          = $(el).find('.filters__select-input'),
-	// 			openSelectList = function() {
-	// 				btn.addClass('opened');
-	// 				list.css({
-	// 					clip: 'rect(0, 9999px, '+listHeight+'px, 0)'
-	// 				});
-	// 			},
-	// 			closeSelectList = function() {
-	// 				btn.removeClass('opened');
-	// 				list.css({
-	// 					clip: 'rect(0, 9999px, 0, 0)'
-	// 				});
-	// 			};
+		if (tabs.length == children.length) {
+			openChild(0);
+			tabs.each(function(i,el){
+				$(el).on('click', function(){
+					if (!$(el).hasClass('door__tab_selected')) {
+						closeAllTabs(i);
+						openChild(i);
+						$(el).addClass('door__tab_selected');
+					}
+				});
+			});
+		}
 
-	// 		btn.on('click', function(evt) {
-	// 			evt.preventDefault();
-	// 			closeAll(i);
-	// 			if (btn.hasClass('opened')) {
-	// 				closeSelectList();
-	// 			} else {
-	// 				openSelectList();
-	// 			}
-	// 		});
+		selects.each(function(i,el){
+			var btn            = $(el).find('.door__select-btn'),
+				list           = $(el).find('.door__option-list'),
+				listHeight     = list.outerHeight(),
+				options        = list.find('.door__option'),
+				input          = $(el).find('.door__select-input'),
+				openSelectList = function() {
+					btn.addClass('opened');
+					list.css({
+						clip: 'rect(0, 9999px, '+listHeight+'px, 0)'
+					});
+				},
+				closeSelectList = function() {
+					btn.removeClass('opened');
+					list.css({
+						clip: 'rect(0, 9999px, 0, 0)'
+					});
+				};
 
-	// 		options.each(function(i,option){
-	// 			$(option).on('click',function(evt){
-	// 				evt.preventDefault();
-	// 				input.val($(option).attr('data-value'));
-	// 				btn.text($(option).text());
-	// 				closeAll();
-	// 			});
-	// 		});
-	// 	});
-	// }
+			btn.on('click', function(evt) {
+				evt.preventDefault();
+				closeAll(i);
+				if (btn.hasClass('opened')) {
+					closeSelectList();
+				} else {
+					openSelectList();
+				}
+			});
+
+			options.each(function(i,option){
+				$(option).on('click',function(evt){
+					evt.preventDefault();
+					input.val($(option).attr('data-value'));
+					btn.text($(option).text());
+					closeAll();
+				});
+			});
+		});
+	}
 });
