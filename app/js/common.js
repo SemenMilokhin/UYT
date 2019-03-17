@@ -6,6 +6,7 @@ $(document).ready(function() {
 	initMainSlider();
 	initSpecialOffersMovements();
 	initFiltersFunctional();
+	initSectionDoorTypeMovements();
 
 	function initHeaderDD() {
 		var nav      = $('.navigation'),
@@ -186,4 +187,58 @@ $(document).ready(function() {
 			});
 		});
 	}
+	function initSectionDoorTypeMovements() {
+	// 	var hold        = $('.door'),
+	// 		form        = hold.find('.door__calc'),
+	// 		selects     = form.find('.door__select'),
+	// 		closeAll = function(count) {
+	// 			selects.each(function(c,element) {
+	// 				if(count!==c) {
+	// 					$(element).find('.filters__select-btn').removeClass('opened');
+	// 					$(element).find('.filters__option-list').css({
+	// 						clip: 'rect(0, 9999px, 0, 0)'
+	// 					});
+	// 				}
+	// 			});
+	// 		};
+
+	// 	selects.each(function(i,el){
+	// 		var btn            = $(el).find('.filters__select-btn'),
+	// 			list           = $(el).find('.filters__option-list'),
+	// 			listHeight     = list.outerHeight(),
+	// 			options        = list.find('.filters__option'),
+	// 			input          = $(el).find('.filters__select-input'),
+	// 			openSelectList = function() {
+	// 				btn.addClass('opened');
+	// 				list.css({
+	// 					clip: 'rect(0, 9999px, '+listHeight+'px, 0)'
+	// 				});
+	// 			},
+	// 			closeSelectList = function() {
+	// 				btn.removeClass('opened');
+	// 				list.css({
+	// 					clip: 'rect(0, 9999px, 0, 0)'
+	// 				});
+	// 			};
+
+	// 		btn.on('click', function(evt) {
+	// 			evt.preventDefault();
+	// 			closeAll(i);
+	// 			if (btn.hasClass('opened')) {
+	// 				closeSelectList();
+	// 			} else {
+	// 				openSelectList();
+	// 			}
+	// 		});
+
+	// 		options.each(function(i,option){
+	// 			$(option).on('click',function(evt){
+	// 				evt.preventDefault();
+	// 				input.val($(option).attr('data-value'));
+	// 				btn.text($(option).text());
+	// 				closeAll();
+	// 			});
+	// 		});
+	// 	});
+	// }
 });
