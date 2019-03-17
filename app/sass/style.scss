@@ -794,6 +794,7 @@ section.first {
 	}
 	&__hidden-svg-wrapper {
 		transform: scale(0);
+		display: block;
 		position: absolute;
 		top: 0;
 		left: 0;
