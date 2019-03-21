@@ -93,6 +93,8 @@ $(document).ready(function() {
 			arrowRight = controls.find('.main-slider__arrow_right');
 
 		slides.slick({
+			autoplay: true,
+			autoplaySpeed: 5000,
 			appendArrows: controls,
 			prevArrow: arrowLeft,
 			nextArrow: arrowRight

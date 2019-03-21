@@ -13,6 +13,7 @@ $light-color-4: #c9d5de;
 $contrast-color: #ffc80a;
 
 $card-shadow: 0px 0px 60px transparentize($quantenary-color,0.93);
+$card-shadow-active: 0px 0px 60px transparentize($quantenary-color,0.73);
 $btn-shadow: 0px 5px 20px transparentize($light-color-4,0.4);
 //______________________________________________________________________________
 //
@@ -48,6 +49,20 @@ body {
 	width: 1170px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+.nicescroll-rails {
+	z-index: 1 !important;
+	&::after {
+		content: '';
+		height: 98%;
+		width: 2px;
+		border-radius: 1px;
+		position: absolute;
+		z-index: -1;
+		left: 3px;
+		top: 1%;
+		background-color: transparentize($light-color-3,0.3);
+	}
 }
 .section-title {
 	font-size: 36px;
@@ -99,6 +114,7 @@ body {
 		color: $light-color;
 		border-color: transparent;
 		transition: background-color 0.2s, color 0.2s, border-color 0s;
+		box-shadow: $btn-shadow;
 	}
 }
 section.first {
@@ -110,6 +126,9 @@ section.first {
 //
 //                                 Header
 //______________________________________________________________________________
+.header {
+	box-shadow: $card-shadow-active;
+}
 .main-header {
 	background-color: $primary-color;
 	height: 90px;
@@ -390,16 +409,32 @@ section.first {
 		width: 100vw;
 		height: 37.9vw;
 		position: relative;
-		.container {
-			position: relative;
-			z-index: 1;
-			height: 100%;
-			padding: 0 115px;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: center;
+		overflow: hidden;
+		&.slick-current {
+			.main-slider__image {
+				transform: translate(0,0);
+			}
 		}
+	}
+	&__container {
+		position: relative;
+		z-index: 1;
+		height: 100%;
+		padding: 0 115px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	&__image {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 300px;
+		margin: 0 auto;
+		transition: 1s;
+		transform: translate(0, 100%);
+		transition-delay: 0.5s;
 	}
 	&__bg-img {
 		top: 0;
@@ -429,9 +464,16 @@ section.first {
 		font-weight: 700;
 		color: $primary-color;
 		text-decoration: none;
-		padding: 21px 40px;
+		outline: none;
+		padding: 19px 38px;
 		background-color: $contrast-color;
+		border: 2px solid $contrast-color;
 		border-radius: 10px;
+		transition: 0.2s;
+		&:hover {
+			color: $contrast-color;
+			background: none;
+		}
 	}
 	&__controls {
 		width: 1170px;
@@ -493,7 +535,7 @@ section.first {
 //                               Section Doors
 //______________________________________________________________________________
 .section-doors {
-	background-color: $light-color-2;
+	background-color: $light-color;
 	.container {
 		padding: 50px 15px 90px;
 	}
@@ -511,22 +553,30 @@ section.first {
 	&__item {
 		width: 555px;
 		height: 270px;
-		overflow: hidden;
-		border-radius: 10px;
-		background-color: $light-color;
-		box-shadow: $card-shadow;
 		margin-bottom: 30px;
+		box-shadow: $card-shadow;
+		border-radius: 10px;
+		overflow: hidden;
+		transition: 0.2s;
 		&_alt {
 			width: 360px;
 		}
+		&:hover {
+			box-shadow: $card-shadow-active;
+		}
 	}
 	&__link {
+		background-color: $light-color;
 		text-decoration: none;
 		font-size: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		transition: 0.2s;
+		&:hover {
+			background-color: $light-color-2;
+		}
 	}
 	&__image {
 		height: 220px;
@@ -700,6 +750,7 @@ section.first {
 		border-radius: 10px; overflow: hidden;
 		box-shadow: $card-shadow;
 		font-size: 0;
+		transition: 0.2s;
 		&:nth-last-of-type(n+5) {
 			margin-bottom: 28px;
 		}
@@ -710,6 +761,9 @@ section.first {
 			.special-offers__hidden-svg-wrapper {
 				transform: scale(1);
 			}
+		}
+		&:hover {
+			box-shadow: $card-shadow-active;
 		}
 	}
 	&__link {

@@ -71,6 +71,22 @@ body {
   margin: 0 auto;
 }
 
+.nicescroll-rails {
+  z-index: 1 !important;
+}
+
+.nicescroll-rails::after {
+  content: '';
+  height: 98%;
+  width: 2px;
+  border-radius: 1px;
+  position: absolute;
+  z-index: -1;
+  left: 3px;
+  top: 1%;
+  background-color: rgba(227, 232, 238, 0.7);
+}
+
 .section-title {
   font-size: 36px;
   line-height: 38px;
@@ -131,10 +147,17 @@ body {
   border-color: transparent;
   -webkit-transition: background-color 0.2s, color 0.2s, border-color 0s;
   transition: background-color 0.2s, color 0.2s, border-color 0s;
+  -webkit-box-shadow: 0px 5px 20px rgba(201, 213, 222, 0.6);
+  box-shadow: 0px 5px 20px rgba(201, 213, 222, 0.6);
 }
 
 section.first .container {
   padding-top: 15px;
+}
+
+.header {
+  -webkit-box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
+  box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
 }
 
 .main-header {
@@ -540,9 +563,15 @@ section.first .container {
   width: 100vw;
   height: 37.9vw;
   position: relative;
+  overflow: hidden;
 }
 
-.main-slider__slide .container {
+.main-slider__slide.slick-current .main-slider__image {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.main-slider__container {
   position: relative;
   z-index: 1;
   height: 100%;
@@ -560,6 +589,20 @@ section.first .container {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.main-slider__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 300px;
+  margin: 0 auto;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .main-slider__bg-img {
@@ -593,9 +636,18 @@ section.first .container {
   font-weight: 700;
   color: #262b30;
   text-decoration: none;
-  padding: 21px 40px;
+  outline: none;
+  padding: 19px 38px;
   background-color: #ffc80a;
+  border: 2px solid #ffc80a;
   border-radius: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.main-slider__link:hover {
+  color: #ffc80a;
+  background: none;
 }
 
 .main-slider__controls {
@@ -666,7 +718,7 @@ section.first .container {
 }
 
 .section-doors {
-  background-color: #f4f5f8;
+  background-color: #fff;
 }
 
 .section-doors .container {
@@ -694,19 +746,26 @@ section.first .container {
 .cards__item {
   width: 555px;
   height: 270px;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #fff;
+  margin-bottom: 30px;
   -webkit-box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.07);
   box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.07);
-  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .cards__item_alt {
   width: 360px;
 }
 
+.cards__item:hover {
+  -webkit-box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
+  box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
+}
+
 .cards__link {
+  background-color: #fff;
   text-decoration: none;
   font-size: 0;
   display: -webkit-box;
@@ -722,6 +781,12 @@ section.first .container {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.cards__link:hover {
+  background-color: #f4f5f8;
 }
 
 .cards__image {
@@ -928,6 +993,8 @@ section.first .container {
   -webkit-box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.07);
   box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.07);
   font-size: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .special-offers__item:nth-last-of-type(n+5) {
@@ -941,6 +1008,11 @@ section.first .container {
 .special-offers__item.in-basket .special-offers__hidden-svg-wrapper {
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+.special-offers__item:hover {
+  -webkit-box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
+  box-shadow: 0px 0px 60px rgba(39, 47, 64, 0.27);
 }
 
 .special-offers__link {
@@ -1049,6 +1121,7 @@ section.first .container {
 .special-offers__hidden-svg-wrapper {
   -webkit-transform: scale(0);
   transform: scale(0);
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
