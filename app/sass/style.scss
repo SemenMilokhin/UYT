@@ -413,6 +413,7 @@ section.first {
 		&.slick-current {
 			.main-slider__image {
 				transform: translate(0,0);
+				transition-delay: 0.5s;
 			}
 		}
 	}
@@ -427,6 +428,8 @@ section.first {
 		justify-content: center;
 	}
 	&__image {
+		width: 45%;
+		height: auto;
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -434,7 +437,7 @@ section.first {
 		margin: 0 auto;
 		transition: 1s;
 		transform: translate(0, 100%);
-		transition-delay: 0.5s;
+		transition-delay: 0.3s;
 	}
 	&__bg-img {
 		top: 0;

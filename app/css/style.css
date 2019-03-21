@@ -569,6 +569,8 @@ section.first .container {
 .main-slider__slide.slick-current .main-slider__image {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .main-slider__container {
@@ -592,6 +594,8 @@ section.first .container {
 }
 
 .main-slider__image {
+  width: 45%;
+  height: auto;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -601,8 +605,8 @@ section.first .container {
   transition: 1s;
   -webkit-transform: translate(0, 100%);
   transform: translate(0, 100%);
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .main-slider__bg-img {
