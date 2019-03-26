@@ -2168,6 +2168,54 @@ section.first .container {
   background-color: #e3e8ee;
 }
 
+.filters__price {
+  width: 235px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.filters__price-input {
+  text-align: center;
+  width: 70px;
+  font: 500 14px/16px 'Muller',sans-serif;
+  padding: 15px 5px;
+  color: #566886;
+  background-color: #fff;
+  border: 2px solid rgba(161, 176, 193, 0.15);
+  border-radius: 10px;
+  outline: none;
+}
+
+.filters__price-input::-webkit-input-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #566886;
+}
+
+.filters__price-input:-moz-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #566886;
+}
+
+.filters__price-input::-moz-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #566886;
+}
+
+.filters__price-input:-ms-input-placeholder {
+  font-family: 'Muller',sans-serif;
+  color: #566886;
+}
+
 .filters__sort {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2184,7 +2232,7 @@ section.first .container {
   margin: 0 0 20px;
 }
 
-.filters__sort-label {
+.filters__sort-label, .filters__price-label {
   font-size: 14px;
   line-height: 50px;
   font-weight: 500;

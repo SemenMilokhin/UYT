@@ -1686,6 +1686,29 @@ section.first {
 			background-color: $light-color-3;
 		}
 	}
+	&__price {
+		width: 235px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 0 20px;
+		&-input{
+			text-align: center;
+			width: 70px;
+			font: 500 14px/16px 'Muller',sans-serif;
+			padding: 15px 5px;
+			color: $ternary-color;
+			background-color: $light-color;
+			border: 2px solid transparentize($secondary-color,0.85);
+			border-radius: 10px;
+			outline: none;
+			@include placeholder {
+				font-family: 'Muller',sans-serif;
+				color: $ternary-color;
+			}
+		}
+	}
 	&__sort {
 		display: flex;
 		align-items: center;
@@ -1694,7 +1717,7 @@ section.first {
 		width: 380px;
 		margin: 0 0 20px;
 	}
-	&__sort-label {
+	&__sort-label, &__price-label {
 		font-size: 14px;
 		line-height: 50px;
 		font-weight: 500;
