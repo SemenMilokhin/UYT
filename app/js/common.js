@@ -69,7 +69,6 @@ $(document).ready(function() {
 		});
 
 		popupsWrapper.on('click', function(evt) {
-			evt.preventDefault();
 			if ($(evt.target).is(popupsWrapper)) {
 				popupsWrapper.animate({
 					opacity: 0
