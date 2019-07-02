@@ -66,7 +66,7 @@ body {
 		background-color: transparentize($light-color-3,0.3);
 	}
 }
-.section-title {
+.section-title, .sale h1, .service-information h1 {
 	font-size: 36px;
 	line-height: 38px;
 	font-weight: 700;
@@ -450,12 +450,12 @@ section.first {
 			border: 1px solid $ternary-color;
 			border-top: none;
 			border-right: none;
-			transform: rotate(-45deg);
+			transform: rotateZ(-45deg);
 			transition: 0.2s;
 		}
 		&.opened {
 			&::after {
-				transform: rotate(45deg) rotateX(180deg) translate(3px, -3px);
+				transform: rotateX(180deg) rotateZ(-45deg) translate(3px, -3px);
 			}
 		}
 	}
@@ -468,7 +468,9 @@ section.first {
 		left: -10px;
 		clip: rect(0, 9999px, 0, 0);
 		background-color: $light-color-2;
-		transition: clip 0.5s;
+	}
+	&__drop-down-list-item {
+		position: relative;
 	}
 	&__drop-down-link {
 		padding: 0 10px;
@@ -480,6 +482,20 @@ section.first {
 		height: 30px;
 		&:hover {
 			background-color: $light-color-3;
+		}
+	}
+	&__subcategories-list {
+		display: none;
+		position: absolute;
+		left: 100%;
+		top: 0;
+		font-size: 14px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: $light-color-2;
+		&:hover {
+			display: block;
 		}
 	}
 	&__link {
@@ -1540,12 +1556,12 @@ section.first {
 	}
 }
 .sale {
-	&__image {
+	img {
 		display: block;
 		border-radius: 10px;
 		margin: 0 0 60px;
 	}
-	&__title {
+	h2 {
 		font-size: 24px;
 		line-height: 26px;
 		font-weight: 700;
@@ -1553,17 +1569,17 @@ section.first {
 		margin: 0 0 25px;
 
 	}
-	&__subtitle {
+	h3 {
 		font-size: 18px;
 		line-height: 24px;
 		margin: 0;
 	}
-	&__list {
+	ul {
 		list-style: none;
 		margin: 0 0 25px;
 		padding: 0;
 	}
-	&__list-item {
+	li {
 		font-size: 16px;
 		line-height: 24px;
 		color: $ternary-color;
@@ -1572,13 +1588,13 @@ section.first {
 			content: '- ';
 		}
 	}
-	&__info {
+	p {
 		font-size: 16px;
 		line-height: 24px;
 		color: $ternary-color;
 		margin: 0 0 24px;
 	}
-	&__accent {
+	span {
 		font-weight: 500;
 		color: $primary-color;
 	}
@@ -2071,24 +2087,24 @@ section.first {
 	}
 }
 .service-information {
-	&__title {
+	h2 {
 		font-size: 24px;
 		line-height: 26px;
 		font-weight: 700;
 		color: $primary-color;
 		margin: 0 0 25px;
 	}
-	&__subtitle {
+	h3 {
 		font-size: 18px;
 		line-height: 24px;
 		margin: 0;
 	}
-	&__list {
+	ul {
 		list-style: none;
 		margin: 0 0 25px;
 		padding: 0;
 	}
-	&__list-item {
+	li {
 		font-size: 16px;
 		line-height: 24px;
 		color: $ternary-color;
@@ -2097,12 +2113,12 @@ section.first {
 			content: '- ';
 		}
 	}
-	&__info {
+	p {
 		font-size: 16px;
 		line-height: 24px;
 		color: $ternary-color;
 		margin: 0 0 24px;
-		~ .service-information__title {
+		~ h2 {
 			margin: 48px 0 25px;
 		}
 	}
