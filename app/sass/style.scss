@@ -1529,7 +1529,6 @@ section.first {
 		position: absolute;
 		text-decoration: none;
 		top: -2px;
-		left: 100%;
 		font: 500 12px/14px 'Muller',sans-serif;
 		color: $ternary-color;
 		background-color: $light-color;
@@ -1543,6 +1542,12 @@ section.first {
 		&:hover {
 			background-color: $ternary-color;
 			color: $light-color;
+		}
+		&_next {
+			left: 100%;
+		}
+		&_prev {
+			right: 100%;
 		}
 	}
 }
