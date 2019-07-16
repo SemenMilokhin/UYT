@@ -2031,7 +2031,7 @@ section.first {
 		color: $primary-color;
 		margin: 0 0 20px;
 	}
-	&__block-text {
+	&__block-text, &__description p {
 		font-size: 14px;
 		line-height: 16px;
 		font-weight: 500;
@@ -2080,7 +2080,6 @@ section.first {
 		overflow: hidden;
 		border-radius: 10px;
 	}
-	
 }
 //______________________________________________________________________________
 //
