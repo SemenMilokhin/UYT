@@ -193,60 +193,64 @@
 			<div class="door">
 				<div class="door__first-content-part">
 					<div class="door__outer-side">
-						<img src="img/door-example-image-1.jpg" alt="door-example-image" class="door__image">
+						<div class="door__image-wrapper">
+							<img src="img/door-example-image-1.jpg" alt="door-example-image" class="door__image">
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" class="door__door-picture">
+						</div>
 						<ul class="door__characteristics-list">
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 25">
 									<path class="door__svg-path" d="M19.989,10.854 C19.988,10.958 19.768,21.301 10.342,24.712 C10.335,24.714 10.328,24.713 10.322,24.715 C10.219,24.750 10.111,24.772 10.000,24.772 C9.889,24.772 9.781,24.750 9.678,24.715 C9.671,24.713 9.665,24.714 9.658,24.712 C0.232,21.301 0.012,10.958 0.011,10.854 C0.005,10.304 0.000,9.404 0.000,8.854 L0.000,5.869 C0.000,4.773 0.897,3.879 2.000,3.879 L3.000,3.879 C7.200,3.879 9.091,1.408 9.169,1.303 C9.358,1.049 9.647,0.926 9.941,0.916 C10.279,0.888 10.622,1.015 10.834,1.308 C10.909,1.408 12.800,3.879 17.000,3.879 L18.000,3.879 C19.103,3.879 20.000,4.773 20.000,5.869 L20.000,8.854 C20.000,9.404 19.995,10.304 19.989,10.854 ZM18.000,5.869 L17.000,5.869 C13.346,5.869 11.090,4.312 10.000,3.305 C8.910,4.312 6.654,5.869 3.000,5.869 L2.000,5.869 L2.000,8.854 C2.000,9.398 2.005,10.289 2.011,10.833 C2.016,11.195 2.244,19.637 9.999,22.695 C17.787,19.619 17.988,10.922 17.989,10.833 C17.995,10.289 18.000,9.398 18.000,8.854 L18.000,5.869 Z"/>
 								</svg>
 								<span class="door__label">Внешняя<br>сторона двери</span>
-								<span class="door__text"></span>
 							</li>
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24">
 									<path class="door__svg-path" d="M24.352,11.054 L15.962,19.312 C15.484,19.784 14.854,20.020 14.223,20.020 C13.594,20.020 12.964,19.785 12.484,19.313 L10.812,17.667 L5.879,23.215 C5.425,23.646 4.713,23.997 3.895,23.997 C3.140,23.997 2.296,23.699 1.478,22.894 C-0.228,21.216 0.311,19.420 1.091,18.623 L6.786,13.705 L5.118,12.063 C4.160,11.118 4.160,9.582 5.117,8.637 L13.507,0.379 C13.903,-0.010 14.544,-0.010 14.939,0.379 L20.005,5.365 C20.254,5.609 20.356,5.962 20.275,6.299 L19.954,7.637 L21.220,7.284 C21.572,7.186 21.951,7.283 22.211,7.539 L24.352,9.645 C24.550,9.839 24.649,10.094 24.649,10.349 C24.649,10.605 24.550,10.860 24.352,11.054 ZM2.541,20.016 C2.345,20.260 2.166,20.752 2.910,21.485 C3.804,22.365 4.355,21.896 4.416,21.840 L9.376,16.254 L8.221,15.117 L2.541,20.016 ZM6.550,10.654 L13.915,17.903 C14.082,18.067 14.364,18.068 14.531,17.903 L15.828,16.626 L7.847,8.769 L6.549,10.046 C6.383,10.211 6.383,10.489 6.550,10.654 ZM21.200,9.361 L18.850,10.016 C18.505,10.112 18.133,10.021 17.874,9.777 C17.615,9.533 17.506,9.172 17.588,8.828 L18.174,6.382 L14.223,2.493 L9.279,7.360 L17.260,15.216 L22.204,10.350 L21.200,9.361 Z"/>
 								</svg>
 								<span class="door__label">Цвет:<br></span>
-								<span class="door__text">Горький шоколад</span>
+								<span class="door__text door__text_color">Название цвета 1</span>
 							</li>
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 									<path class="door__svg-path" d="M24.000,16.000 L24.000,22.000 C24.000,23.103 23.103,24.000 22.000,24.000 L8.333,24.000 C8.294,24.000 8.260,23.982 8.222,23.978 C8.148,23.986 8.076,24.000 8.000,24.000 L2.000,24.000 C0.898,24.000 0.000,23.103 0.000,22.000 L0.000,2.000 C0.000,0.897 0.898,0.000 2.000,0.000 L8.000,0.000 C8.781,0.000 9.453,0.455 9.782,1.110 C10.407,0.353 11.514,0.142 12.371,0.667 L17.168,3.599 C17.627,3.878 17.945,4.321 18.065,4.844 C18.185,5.367 18.089,5.904 17.797,6.356 L17.706,6.497 L17.867,6.403 C18.820,5.851 20.049,6.178 20.601,7.132 L23.271,11.749 C23.538,12.211 23.608,12.750 23.471,13.267 C23.371,13.643 23.141,13.947 22.860,14.202 C23.531,14.525 24.000,15.206 24.000,16.000 ZM2.000,2.000 L2.000,22.000 L7.997,22.000 L8.000,2.000 L2.000,2.000 ZM11.329,2.375 L10.000,4.494 L10.000,14.738 L16.117,5.270 L11.329,2.375 ZM18.870,8.133 L15.322,10.187 L10.000,18.423 L10.000,19.426 L21.539,12.750 L18.870,8.133 ZM22.000,16.000 L19.917,16.000 L10.000,21.737 L10.000,22.000 L22.000,22.000 L22.000,16.000 ZM5.030,20.000 C4.478,20.000 4.025,19.552 4.025,19.000 C4.025,18.448 4.468,18.000 5.019,18.000 L5.030,18.000 C5.582,18.000 6.030,18.448 6.030,19.000 C6.030,19.552 5.582,20.000 5.030,20.000 Z"/>
 								</svg>
 								<span class="door__label">Рисунок:<br></span>
-								<span class="door__text">ПВХ матовый</span>
+								<span class="door__text door__text_picture">Без рисунка</span>
 							</li>
 						</ul>
 					</div>
 					<div class="door__inner-side">
-						<img src="img/door-example-image-2.jpg" alt="door-example-image" class="door__image">
+						<div class="door__image-wrapper">
+							<img src="img/door-example-image-2.jpg" alt="door-example-image" class="door__image">
+							<img src="" alt="" class="door__door-picture">
+						</div>
 						<ul class="door__characteristics-list">
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 25">
 									<path class="door__svg-path" d="M19.989,10.854 C19.988,10.958 19.768,21.301 10.342,24.712 C10.335,24.714 10.328,24.713 10.322,24.715 C10.219,24.750 10.111,24.772 10.000,24.772 C9.889,24.772 9.781,24.750 9.678,24.715 C9.671,24.713 9.665,24.714 9.658,24.712 C0.232,21.301 0.012,10.958 0.011,10.854 C0.005,10.304 0.000,9.404 0.000,8.854 L0.000,5.869 C0.000,4.773 0.897,3.879 2.000,3.879 L3.000,3.879 C7.200,3.879 9.091,1.408 9.169,1.303 C9.359,1.049 9.647,0.926 9.942,0.916 C10.279,0.888 10.622,1.015 10.834,1.308 C10.909,1.408 12.800,3.879 17.000,3.879 L18.000,3.879 C19.103,3.879 20.000,4.773 20.000,5.869 L20.000,8.854 C20.000,9.404 19.995,10.304 19.989,10.854 ZM18.000,5.869 L17.000,5.869 C13.346,5.869 11.090,4.312 10.000,3.305 C8.910,4.312 6.654,5.869 3.000,5.869 L2.000,5.869 L2.000,8.854 C2.000,9.398 2.005,10.289 2.011,10.833 C2.016,11.195 2.244,19.637 9.999,22.695 C17.787,19.619 17.988,10.922 17.989,10.833 C17.995,10.289 18.000,9.398 18.000,8.854 L18.000,5.869 ZM10.387,16.408 C10.224,16.629 9.975,16.773 9.701,16.806 C9.661,16.811 9.622,16.813 9.582,16.813 C9.348,16.813 9.121,16.731 8.940,16.581 L5.360,13.596 C4.936,13.243 4.881,12.616 5.235,12.194 C5.589,11.774 6.221,11.716 6.644,12.071 L9.408,14.375 L13.197,9.259 C13.525,8.817 14.150,8.722 14.595,9.049 C15.040,9.374 15.135,9.997 14.807,10.439 L10.387,16.408 Z"/>
 								</svg>
 								<span class="door__label">Внутренняя<br>сторона двери</span>
-								<span class="door__text"></span>
 							</li>
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24">
 									<path class="door__svg-path" d="M24.352,11.054 L15.962,19.312 C15.484,19.784 14.854,20.020 14.223,20.020 C13.594,20.020 12.964,19.785 12.484,19.313 L10.812,17.667 L5.879,23.215 C5.425,23.646 4.713,23.997 3.895,23.997 C3.140,23.997 2.296,23.699 1.478,22.894 C-0.228,21.216 0.311,19.420 1.091,18.623 L6.786,13.705 L5.118,12.063 C4.160,11.118 4.160,9.582 5.117,8.637 L13.507,0.379 C13.903,-0.010 14.544,-0.010 14.939,0.379 L20.005,5.365 C20.254,5.609 20.356,5.962 20.275,6.299 L19.954,7.637 L21.220,7.284 C21.572,7.186 21.951,7.283 22.211,7.539 L24.352,9.645 C24.550,9.839 24.649,10.094 24.649,10.349 C24.649,10.605 24.550,10.860 24.352,11.054 ZM2.541,20.016 C2.345,20.260 2.166,20.752 2.910,21.485 C3.804,22.365 4.355,21.896 4.416,21.840 L9.376,16.254 L8.221,15.117 L2.541,20.016 ZM6.550,10.654 L13.915,17.903 C14.082,18.067 14.364,18.068 14.531,17.903 L15.828,16.626 L7.847,8.769 L6.549,10.046 C6.383,10.211 6.383,10.489 6.550,10.654 ZM21.200,9.361 L18.850,10.016 C18.505,10.112 18.133,10.021 17.874,9.777 C17.615,9.533 17.506,9.172 17.588,8.828 L18.174,6.382 L14.223,2.493 L9.279,7.360 L17.260,15.216 L22.204,10.350 L21.200,9.361 Z"/>
 								</svg>
-								<span class="door__label">Цвет:</span>
-								<span class="door__text">Слоновая<br>кость + патина золото</span>
+								<span class="door__label">Цвет:<br></span>
+								<span class="door__text door__text_color">Название цвета 1</span>
 							</li>
 							<li class="door__characteristic">
 								<svg class="door__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 									<path class="door__svg-path" d="M24.000,16.000 L24.000,22.000 C24.000,23.103 23.103,24.000 22.000,24.000 L8.333,24.000 C8.294,24.000 8.260,23.982 8.222,23.978 C8.148,23.986 8.076,24.000 8.000,24.000 L2.000,24.000 C0.898,24.000 0.000,23.103 0.000,22.000 L0.000,2.000 C0.000,0.897 0.898,0.000 2.000,0.000 L8.000,0.000 C8.781,0.000 9.453,0.455 9.782,1.110 C10.407,0.353 11.514,0.142 12.371,0.667 L17.168,3.599 C17.627,3.878 17.945,4.321 18.065,4.844 C18.185,5.367 18.089,5.904 17.797,6.356 L17.706,6.497 L17.867,6.403 C18.820,5.851 20.049,6.178 20.601,7.132 L23.271,11.749 C23.538,12.211 23.608,12.750 23.471,13.267 C23.371,13.643 23.141,13.947 22.860,14.202 C23.531,14.525 24.000,15.206 24.000,16.000 ZM2.000,2.000 L2.000,22.000 L7.997,22.000 L8.000,2.000 L2.000,2.000 ZM11.329,2.375 L10.000,4.494 L10.000,14.738 L16.117,5.270 L11.329,2.375 ZM18.870,8.133 L15.322,10.187 L10.000,18.423 L10.000,19.426 L21.539,12.750 L18.870,8.133 ZM22.000,16.000 L19.917,16.000 L10.000,21.737 L10.000,22.000 L22.000,22.000 L22.000,16.000 ZM5.030,20.000 C4.478,20.000 4.025,19.552 4.025,19.000 C4.025,18.448 4.468,18.000 5.019,18.000 L5.030,18.000 C5.582,18.000 6.030,18.448 6.030,19.000 C6.030,19.552 5.582,20.000 5.030,20.000 Z"/>
 								</svg>
 								<span class="door__label">Рисунок:<br></span>
-								<span class="door__text">Лацио</span>
+								<span class="door__text door__text_picture">Без рисунка</span>
 							</li>
 						</ul>
 					</div>
 					<form class="door__calc" method="get" action="/">
 						<div class="door__select">
-							<button class="door__select-btn">Выбор цвета фурнитуры 1</button>
+							<button class="door__select-btn">Выбор цвета фурнитуры</button>
 							<ul class="door__option-list">
 								<li class="door__option" data-value="value-1">
 									Выбор цвета фурнитуры 1
@@ -261,7 +265,25 @@
 									Выбор цвета фурнитуры 4
 								</li>
 							</ul>
-							<input class="door__select-input" type="hidden" name="select" id="select">
+							<input class="door__select-input" type="hidden" name="select-color" id="select-color">
+						</div>
+						<div class="door__select">
+							<button class="door__select-btn">Выбор размера</button>
+							<ul class="door__option-list">
+								<li class="door__option" data-value="value-1">
+									Выбор размера 1
+								</li>
+								<li class="door__option" data-value="value-2">
+									Выбор размера 2
+								</li>
+								<li class="door__option" data-value="value-3">
+									Выбор размера 3
+								</li>
+								<li class="door__option" data-value="value-4">
+									Выбор размера 4
+								</li>
+							</ul>
+							<input class="door__select-input" type="hidden" name="select-size" id="select-size">
 						</div>
 						<input type="text" class="door__input" name="quantity" id="quantity" placeholder="Количество">
 						<p class="door__price-label">Ваша цена на Министр сегодня:</p>
@@ -276,45 +298,45 @@
 					<div class="door__content">
 						<div class="door__tuning">
 							<div class="door__row">
-								<div class="door__block">
+								<div class="door__block door__block_outer-side">
 									<h3 class="door__block-title">Внешняя сторона двери</h3>
 									<p class="door__block-text">Выберите панель:</p>
 									<ul class="door__panels-list">
-										<li class="door__panel" style="background-color: #282f40"></li>
-										<li class="door__panel" style="background-color: #a0b0c0"></li>
-										<li class="door__panel" style="background-color: #e3e8ee"></li>
+										<li class="door__panel" style="background-color: #282f40" data-src="img/door-example-image-1.jpg" data-title="Название цвета 1"></li>
+										<li class="door__panel" style="background-color: #a0b0c0" data-src="img/articles-example-image-3.jpg" data-title="Название цвета 2"></li>
+										<li class="door__panel" style="background-color: #e3e8ee" data-src="img/articles-example-image-2.jpg" data-title="Название цвета 3"></li>
 									</ul>
 									<p class="door__block-text">Выберите рисунок:</p>
 									<ul class="door__pictures-list">
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-title="Без рисунка">
+											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="door-picture-example-image" class="door__picture-image">
 										</li>
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="img/brands-logo-example.png" data-title="название рисунка 1">
+											<img src="img/brands-logo-example.png" alt="door-picture-example-image" class="door__picture-image">
 										</li>
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="img/main-slider-example-image.png" data-title="название рисунка 2">
+											<img src="img/main-slider-example-image.png" alt="door-picture-example-image" class="door__picture-image">
 										</li>
 									</ul>
 								</div>
-								<div class="door__block">
+								<div class="door__block door__block_inner-side">
 									<h3 class="door__block-title">Внутренняя сторона двери</h3>
 									<p class="door__block-text">Выберите панель:</p>
 									<ul class="door__panels-list">
-										<li class="door__panel" style="background-color: #282f40"></li>
-										<li class="door__panel" style="background-color: #a0b0c0"></li>
-										<li class="door__panel" style="background-color: #e3e8ee"></li>
+										<li class="door__panel" style="background-color: #282f40" data-src="img/door-example-image-2.jpg" data-title="Название цвета 1"></li>
+										<li class="door__panel" style="background-color: #a0b0c0" data-src="img/articles-example-image-3.jpg" data-title="Название цвета 2"></li>
+										<li class="door__panel" style="background-color: #e3e8ee" data-src="img/articles-example-image-2.jpg" data-title="Название цвета 3"></li>
 									</ul>
 									<p class="door__block-text">Выберите рисунок:</p>
 									<ul class="door__pictures-list">
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-title="Без рисунка">
+											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="door-picture-example-image" class="door__picture-image">
 										</li>
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="img/brands-logo-example.png" data-title="Название рисунка 1">
+											<img src="img/brands-logo-example.png" alt="door-picture-example-image" class="door__picture-image">
 										</li>
-										<li class="door__picture">
-											<img src="img/door-picture-example-image.jpg" alt="door-picture-example-image" class="door__picture-image">
+										<li class="door__picture" data-src="img/main-slider-example-image.png" data-title="Название рисунка 2">
+											<img src="img/main-slider-example-image.png" alt="door-picture-example-image" class="door__picture-image">
 										</li>
 									</ul>
 								</div>

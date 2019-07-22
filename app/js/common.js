@@ -8,6 +8,7 @@ $(document).ready(function() {
 	initSpecialOffersMovements();
 	initFiltersFunctional();
 	initSectionDoorTypeMovements();
+	initDoorTuning();
 
 	function initScrollBars() {
 		$("body").niceScroll({
@@ -381,5 +382,46 @@ $(document).ready(function() {
 				});
 			});
 		});
+	}
+	function initDoorTuning() {
+		var hold = $('.door'),
+			outerDoorSide = hold.find('.door__outer-side'),
+			innerDoorSide = hold.find('.door__inner-side'),
+
+			outerSideTuner = hold.find('.door__block_outer-side'),
+			innerSideTuner = hold.find('.door__block_inner-side'),
+
+			toTie = function (doorSide,tuner) {
+				var doorImage = doorSide.find('.door__image'),
+					doorPicImage = doorSide.find('.door__door-picture'),
+					doorColor = doorSide.find('.door__text_color'),
+					doorPicture = doorSide.find('.door__text_picture'),
+
+					panels = tuner.find('.door__panel'),
+					pictures = tuner.find('.door__picture');
+
+				panels.each(function(i,el){
+					$(el).on('click', function(){
+						var imagePath = $(el).attr('data-src'),
+							colorTitle = $(el).attr('data-title');
+
+						doorImage.attr('src',imagePath);
+						doorColor.text(colorTitle);
+					});
+				});
+
+				pictures.each(function(i,el){
+					$(el).on('click', function(){
+						var picturePath = $(el).attr('data-src'),
+							pictureTitle = $(el).attr('data-title');
+
+						doorPicImage.attr('src',picturePath);
+						doorPicture.text(pictureTitle);
+					});
+				});
+			};
+
+		toTie(outerDoorSide,outerSideTuner);
+		toTie(innerDoorSide,innerSideTuner);
 	}
 });
