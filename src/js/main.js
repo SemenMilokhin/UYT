@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'jquery.nicescroll/dist/jquery.nicescroll.min.js'
+import 'slick-carousel/slick/slick.min.js';
+
 $(document).ready(function() {
 	initScrollBars();
 	initHeaderPopups();

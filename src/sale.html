@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>УЮТ2 | Двери межкомнатные(массивные,шпонированные,ПВХ) и входные металлические. Сантехника,плитка керамическая,люстры,напольные покрытия(ламинат,линолеум,ковролин,ковры). А также паркетная и массивная доска.</title>
-
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="sass/style.scss">
 </head>
 <body>
 	<header class="header" id="header">
@@ -175,108 +174,48 @@
 			</div>
 		</div>
 	</header>
-	<section class="section-sales" id="section-sales">
+	<section class="section-sale" id="section-sale">
 		<div class="container">
 			<ul class="breadcrumbs">
 				<li class="breadcrumbs__item">
 					<a href="index.html" class="breadcrumbs__link">Главная</a>
 				</li>
-				<li class="breadcrumbs__item breadcrumbs__item_this-page">Акции</li>
+				<li class="breadcrumbs__item">
+					<a href="sales.html" class="breadcrumbs__link">Акции</a>
+				</li>
+				<li class="breadcrumbs__item breadcrumbs__item_this-page">Акция1</li>
 			</ul>
-			<h2 class="section-title">Акции</h2>
-			<ul class="sales">
-				<li class="sales__item">
-					<img src="img/sales-example-image-1.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-				<li class="sales__item">
-					<img src="img/sales-example-image-1.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-				<li class="sales__item invalid">
-					<img src="img/sales-example-image-2.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-				<li class="sales__item invalid">
-					<img src="img/sales-example-image-2.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-				<li class="sales__item invalid">
-					<img src="img/sales-example-image-2.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-				<li class="sales__item invalid">
-					<img src="img/sales-example-image-2.jpg" alt="sales-example-image" class="sales__image">
-					<div class="sales__text-wrapper">
-						<h5 class="sales__title">Лови момент</h5>
-						<div class="sales__row">
-							<span class="sales__post-date">21.12.2018</span>
-							<span class="sales__read-more-btn">Подробнее</span>
-						</div>
-					</div>
-					<a href="sale.html" class="sales__link"></a>
-				</li>
-			</ul>
-			<div class="pages">
-				<div class="pages__list-wrapper">
-					<ul class="pages__list">
-						<li class="pages__list-item">
-							<a href="#" class="pages__link">1</a>
-						</li>
-						<li class="pages__list-item">
-							<a href="#" class="pages__link">2</a>
-						</li>
-						<li class="pages__list-item pages__list-item_selected">
-							<a href="#" class="pages__link">3</a>
-						</li>
-						<li class="pages__list-item">
-							<a href="#" class="pages__link">4</a>
-						</li>
-						<li class="pages__list-item">
-							<a href="#" class="pages__link">5</a>
-						</li>
-						<li class="pages__list-item pages__list-item_not-a-link">...</li>
-						<li class="pages__list-item pages__list-item_total-pages-count">
-							<a href="#" class="pages__link">457</a>
-						</li>
-					</ul>
-					<button class="pages__btn pages__btn_next">Далее</button>
-				</div>
+			<div class="sale">
+				<h1>Заголовок может быть длинным</h1>
+				<img src="img/sale-example-image.jpg" alt="sale-example-image">
+				<h2>21.12.2018</h2>
+				<h3>Владельцы клубных карт получают скидку в наших магазинах:</h3>
+				<ul>
+					<li>Карты Standard – 5%</li>
+					<li>Карты Silver – 7%</li>
+					<li>Карты Gold – 10%</li>
+				</ul>
+				<p>
+					Партнёр компании Двери Регионов- Urban Group начинает новогодний SALE! Приобретайте квартиры со скидкой до 18% или рекомендуйте компанию друзьям – и получайте вознаграждение до 200 000 рублей!
+				</p>
+				<p>
+					Компания Двери Регионов является партнёром программы Urban Share, созданной одним из лидеров рынка недвижимости<br>– компании Urban Group.
+				</p>
+				<p>
+					До Нового года осталось всего 15 дней. За это время можно успеть немало: закончить важные дела, спланировать праздничное путешествие, купить подарки для своих близких и даже приобрести квартиру в жилых комплексах Urban Group: «Лайково», «Лесобережный», «Митино О2», «Видный город» и «Солнечная система 2» — c праздничной скидкой до 18%!
+				</p>
+				<p>
+					Для получения скидки Вам необходимо позвонить по телефонному номеру +7-495-106-28-06. После завершения телефонного разговора<br>Вам будет направлен индивидуальный код на скидку.
+				</p>
+				<p>
+					<span>«Новогодний SALE» продлится до 31 декабря 2017 года.</span> Это идеальный момент, чтобы приобрести квартиру по выгодной цене<br>не только для Вас, но и для Ваших друзей и знакомых!
+				</p>
+				<p>
+					Если Ваш друг или знакомый планирует приобретение недвижимости – добавьте его контакт в личный кабинет программы Urban Share.<br>Ваш друг или знакомый получит скидку на квартиру до 18% по акции «Новогодний SALE!», а Вы – вознаграждение в размере 1%<br>от стоимости его квартиры!
+				</p>
+				<p>
+					Для того, чтобы стать участником программы и начать зарабатывать, потребуется менее 20 секунд, а бонус в зависимости<br>от стоимости жилья может достигать 200 000 рублей!
+				</p>
 			</div>
 		</div>
 	</section>
@@ -383,9 +322,6 @@
 			</ul>
 		</div>
 	</footer>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/common.js"></script>
+	<script type="module" src="js/main.js"></script>
 </body>
 </html>
